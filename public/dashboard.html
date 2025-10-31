@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f0f0f0;
+      padding: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #ff5555;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ff3333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome, Admin 🎉</h1>
+  <p>You are logged in securely.</p>
+  <button onclick="logout()">Logout</button>
+
+  <script>
+    function logout() {
+      window.location.href = '/admin/logout';
+    }
+  </script>
+</body>
+</html>

@@ -1,20 +1,22 @@
-import mysql from "mysql2";
-import dotenv from "dotenv";
-dotenv.config();
+// db.js
+const mysql = require('mysql2');
 
+// Δημιουργία σύνδεσης
 const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "student_housing"
+  host: 'localhost',
+  user: 'root',
+  password: '', 
+  database: 'student_housing',
+  port: 3306
 });
 
+// Έλεγχος σύνδεσης
 connection.connect((err) => {
   if (err) {
-    console.error("❌ Σφάλμα σύνδεσης με τη MariaDB:", err);
-  } else {
-    console.log("✅ Συνδεθήκαμε επιτυχώς στη βάση δεδομένων!");
+    console.error('Database connection failed:', err.stack);
+    return;
   }
+  console.log(' Connected to MySQL as ID ' + connection.threadId);
 });
 
-export default connection;
+module.exports = connection;
